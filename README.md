@@ -14,7 +14,6 @@ Please direct any questions or comments regarding this work to Heili Lowman at h
 
     - `yolo_segment_s.ipnyb` stores the script to run segmentation on the dataset with yolov8s model. This model acheived an mAP of rougly 0.6 on validation test and 0.58 on testing set
 
-    - `segment` folder stores the results including metrics, graphs and model weights for training, validation and prediction (`train 4` stores results for training, `val` stores metrics for validation set and `val3` stores metrics for testing set, `predict` stores 2 predicted inference images from testing set)
+    - `segment` folder stores the results including metrics, graphs and model weights for training, validation and prediction (`train 4` stores results for training, `val` stores metrics for testing set with default conf and `val3` stores metrics for testing set with conf=0.15, `predict` stores 2 predicted inference images from testing set)
 
     - Note best weights for yolov8s segementation can be found in `YOLO-Segmentation (mAP0.6)/segment/train4/weights/best.pt`
-
