@@ -17,3 +17,6 @@ Please direct any questions or comments regarding this work to Heili Lowman at h
     - `segment` folder stores the results including metrics, graphs and model weights for training, validation and prediction (`train 4` stores results for training, `val` stores metrics for testing set with default conf and `val3` stores metrics for testing set with conf=0.15, `predict` stores 2 predicted inference images from testing set)
 
     - Note best weights for yolov8s segementation can be found in `YOLO-Segmentation (mAP0.6)/segment/train4/weights/best.pt`
+
+- The `Resnet_tensorflow_intial_version.ipynb` contains the script to augment images of all classes except dipteran to 400 images. We then performed used Resnet model for classification. This acheives 0.89 testing accuracy. Confusion matrix shows that model is good at predict most classes with 'other' being the sole exception (the model performs very poorely on the other class).
+
