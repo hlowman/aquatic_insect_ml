@@ -17,3 +17,5 @@ Please direct any questions or comments regarding this work to Heili Lowman at h
     - `segment` folder stores the results including metrics, graphs and model weights for training, validation and prediction (`train 4` stores results for training, `val` stores metrics for testing set with default conf and `val3` stores metrics for testing set with conf=0.15, `predict` stores 2 predicted inference images from testing set)
 
     - Note best weights for yolov8s segementation can be found in `YOLO-Segmentation (mAP0.6)/segment/train4/weights/best.pt`
+
+Two finetuned ResNet classification models may be found, with one implemented using Keras/Tensorflow and the other with PyTorch. 
