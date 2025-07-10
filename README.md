@@ -18,5 +18,9 @@ Please direct any questions or comments regarding this work to Heili Lowman at h
 
     - Note best weights for yolov8s segementation can be found in `YOLO-Segmentation (mAP0.6)/segment/train4/weights/best.pt`
 
+
+Two finetuned ResNet classification models may be found, with one implemented using Keras/Tensorflow and the other with PyTorch. 
+
 - The `Resnet_tensorflow_intial_version.ipynb` contains the script to augment images of all classes except dipteran to 400 images. We then performed used Resnet model for classification. This acheives 0.89 testing accuracy. Confusion matrix shows that model is good at predict most classes with 'other' being the sole exception (the model performs very poorely on the other class).
+
 
