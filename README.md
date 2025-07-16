@@ -17,10 +17,8 @@ Please direct any questions or comments regarding this work to Heili Lowman at h
     - `segment` folder stores the results including metrics, graphs and model weights for training, validation and prediction (`train 4` stores results for training, `val` stores metrics for testing set with default conf and `val3` stores metrics for testing set with conf=0.15, `predict` stores 2 predicted inference images from testing set)
 
     - Note best weights for yolov8s segementation can be found in `YOLO-Segmentation (mAP0.6)/segment/train4/weights/best.pt`
+- The `Resnet Classification Folder` stores the scripts and best weights for insect classication using the resnet model
 
-
-Two finetuned ResNet classification models may be found, with one implemented using Keras/Tensorflow and the other with PyTorch. 
-
-- The `Resnet_tensorflow_intial_version.ipynb` contains the script to augment images of all classes except dipteran to 400 images. We then performed used Resnet model for classification. This acheives 0.89 testing accuracy. Confusion matrix shows that model is good at predict most classes with 'other' being the sole exception (the model performs very poorely on the other class).
-
+    - The `Resnet_tensorflow_intial_version.ipynb` contains the script to augment images of all classes except dipteran to 400 images. We then performed used Resnet model for classification. This acheives 0.89 testing accuracy. Confusion matrix shows that model is good at predict most classes with 'other' being the sole exception (the model performs very poorely on the other class).
+    - The `Resnet_Label_Smoothing_Confidence_Thresholding.ipynb` contains the script to  augment images of all classes except dipteran to 400 images. We one hot encode the labels and perform label smoothing by a factor of 0.1. The helps reduce model overconfidence about wrong prediction. Example: Class 2 -> one hot encoded: [0, 0, 1, 0, 0, 0] -> label smoothing [0.02, 0.02, 0.9, 0.02, 0.02]. We also visualised confidence of predicts and experimented with various confidence threshold.
 
