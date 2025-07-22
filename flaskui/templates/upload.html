@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Lexend', sans-serif;
+        background: 
+            linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+            url("{{ url_for('static', filename='images/home.png') }}") no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    h1, h2, p {
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    }
+
+    .home-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 70vh;
+        padding-top: 80px;
+        text-align: center;
+        color: white;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+        position: relative;
+        width: 100%;
+    }
+
+    .main-heading {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 25px;
+    }
+
+    .subheading {
+        font-size: 1.75rem;
+        margin-bottom: 15px;
+    }
+
+    .body-text {
+        font-size: 1.6rem;
+        color: white;
+    }
+
+    .photo-credit {
+        font-size: 0.85rem;
+        color: #cccccc;
+        margin-top: auto;
+        padding: 10px 0;
+        text-align: center;
+        width: 100%;
+        user-select: none;
+    }
+
+    .upload-wrapper {
+        margin-top: 20px;
+    }
+
+    .upload-wrapper input[type="file"] {
+        color: white;
+        font-size: 1.1rem;
+        text-align: center;
+        border: none;
+        background: none;
+    }
+</style>
+
+<div class="home-container">
+  <h1 style="color: #fdfdfd; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); font-size: 2.8em; text-align: center;">
+        Upload your sticky trap image below!
+  </h1>
+
+<form method="POST" action="" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+
+  <div class="upload-wrapper">
+    {{ form.picture.label() }}<br>
+    <label for="picture" class="mb-1"></label>
+    <div style="text-align: center;">
+      {{ form.picture(class="form-control-file") }}
+    </div>
+    {% if form.picture.errors %}
+      {% for error in form.picture.errors %}
+        <span class="text-danger">{{ error }}</span><br>
+      {% endfor %}
+    {% endif %}
+
+    <div style="margin-top: 30px; text-align: center;">
+      {{ form.submit(class="btn", style="background-color: white; color: black; font-weight: bold;") }}
+    </div>
+  </div>
+</form>
+{% endblock %}

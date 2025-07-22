@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: 
+            linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+            url("{{ url_for('static', filename='images/home.png') }}") no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+    }
+</style>
+<div class="container mx-auto px-6 py-20 text-white bg-black bg-opacity-50 rounded-2xl shadow-xl backdrop-blur-md max-w-5xl">
+  <h1 class="text-3xl font-semibold mt-10 mb-3 text-white">About the Project</h1>
+
+  <p class="mb-6 text-lg leading-relaxed">
+    This project was developed by the <strong>2025 Data+/Climate+</strong> team in the Bernhardt Lab at Duke University, including Abdulmlik Almuhanna, Uzair Chaudhry, Melosa Rao, and Boyu Tan.
+    Our goal is to automate the identification of aquatic insects from <em>sticky trap images</em> using computer vision and supervised machine learning techniques.
+  </p>
+
+  <p class="mb-6 text-lg leading-relaxed">
+    These sticky traps are deployed weekly in the <strong>Hubbard Brook Experimental Forest</strong> in New Hampshire during the snow-free season (roughly April–November). Since 2018, the insect records have been meticulously counted by hand to monitor dominant aquatic taxa like Diptera, Ephemeroptera, Plecoptera, and Trichoptera.
+    Manual counts and data stewardship are led by Mike Vlah, Tamera Wooster, Chris Solomon, and Emily Bernhardt.
+  </p>
+
+  <p class="mb-6 text-lg leading-relaxed">
+    For current visualizations of the insect dataset, visit <a href="https://hbwater.org" class="underline text-blue-300 hover:text-blue-500" target="_blank">hbwater.org</a>.
+  </p>
+
+  <h2 class="text-3xl font-semibold mt-10 mb-4 text-white">Machine Learning Models</h2>
+  <p class="mb-4 text-lg leading-relaxed">
+    We trained a YOLOv8 segmentation model to detect insect regions from trap images. All segmented instances are labeled as “insect” and passed to a classification model for taxonomic identification.
+    Our best YOLOv8 segmentation model achieved an mAP of <strong>~0.6</strong> on validation and <strong>~0.58</strong> on test data.
+  </p>
+
+  <p class="mb-6 text-lg leading-relaxed">
+    For classification, we trained fine-tuned <strong>ResNet models</strong> using both TensorFlow and PyTorch. The TensorFlow model, after class balancing and augmentation, achieved <strong>0.89 accuracy</strong> on the test set. Performance was strong across most taxa, though the "other" class proved more difficult to classify accurately.
+  </p>
+
+  <p class="mb-6 text-lg leading-relaxed">
+    For questions or feedback, please contact <a href="mailto:heili.lowman@duke.edu" class="underline text-blue-300 hover:text-blue-500">Heili Lowman</a>.
+  </p>
+</div>
+{% endblock %}
+
