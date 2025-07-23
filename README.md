@@ -12,12 +12,13 @@ Please direct any questions or comments regarding this work to Heili Lowman at h
 
 
 ## Final Pipeline
-`pipeline_final.ipynb` contains a script to detect and classify insects on a single image. The notebook contains running instructions for runnning this notebook on colab. This can also be adapted to run on clusters.
+`pipeline_final_with_annotation.ipynb` contains a script to detect and classify insects on a single image. The notebook contains running instructions for runnning this notebook on colab. This can also be adapted to run on clusters.
 1. The user needs to upload image file in the same directory and update `org_img` variable to include image path.
 2. The next code block loads models and requiremnts.
-3. The thrid code block performes inference. A summary of results is saved in `class_summary.csv` and the each image path, predicted class and confidence is saved in `detailed_predictions.csv`. Individual cropped images in their corresponding prdiction folders are save in `results` folder.
-5. The user can download everything to their machine by running forth code block.
-6. The fifth code block resets the variables for new image inference
+3. The thrid code block performes inference. A summary of results is saved in `class_summary.csv` and the each image path, predicted class and confidence is saved in `detailed_predictions.csv`. Individual cropped images in their corresponding prdiction folders are save in `results` folder. The `coco_annotations.json` file contains the annotations for the image in coco format.
+4. The user can visualise annotated bounding boxes on the image using the forth code block
+5. The user can download everything to their machine by running fifth code block. The includes `output_summary.csv`, `detailed_predictions.csv`, `coco_annotations.json`, `results` folder and the `annotated_output.jpg`.
+6. The sixth code block resets the variables for new image inference
 
 ---
 - The `YOLO-Segmentation (mAP0.6)` folder stores the results and the script to run yolo segmentation on our dataset. Note that for segmentation purposes all instances were labeled as insects and they will be classified using a seperate model
