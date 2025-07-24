@@ -21,6 +21,8 @@ Please direct any questions or comments regarding this work to Heili Lowman at h
 6. The sixth code block resets the variables for new image inference
 
 ---
+-The `yolo11-p2_FineTuned_binary_detection.ipynb (mAp0.81)`  has the code for training our Final Binary Detector, we used YOLOX11-p2  this specific architecture of yolo is designed specifically for small object detection and we used a pretrained version on COCO dataset as this will save the training time, we used SAHI SF algorithm and augmentation with some modifcations to the hyperparameters to make the model have more training samples and get to learn more from the small dataset we have this improved the model's accuracy and boost recall (to 0.87), we also used SAHI for inference as this also made our detections more accurate 
+
 - The `YOLO-Segmentation (mAP0.6)` folder stores the results and the script to run yolo segmentation on our dataset. Note that for segmentation purposes all instances were labeled as insects and they will be classified using a seperate model
 
     - `yolo_segment_s.ipnyb` stores the script to run segmentation on the dataset with yolov8s model. This model acheived an mAP of rougly 0.6 on validation test and 0.58 on testing set
